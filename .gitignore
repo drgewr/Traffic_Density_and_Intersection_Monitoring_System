@@ -1,0 +1,25 @@
+# OMNeT++ build outputs
+out/
+*.o
+*.o.d
+
+# OMNeT++ generated message files
+*_m.cc
+*_m.h
+
+# OMNeT++ simulation result files
+simulations/results/
+*.sca
+*.vec
+*.vci
+
+# OMNeT++ workspace files
+.settings
+.cproject
+.project
+.nedfolders
+.nedexclusions
+.oppbuildspec
+
+# macOS
+.DS_Store
