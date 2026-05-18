@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<analysis version="2">
+    <inputs>
+        <input pattern="/Traffic_Density_and_Intersection_Monitoring_System/simulations/results/General-*.vec"/>
+        <input pattern="/Traffic_Density_and_Intersection_Monitoring_System/simulations/results/General-*.sca"/>
+    </inputs>
+    <charts/>
+</analysis>

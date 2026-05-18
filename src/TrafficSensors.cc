@@ -53,7 +53,6 @@ void TrafficSensors::generateTrafficEvent()
     event->setVehicleCount(0);
     event->setPedestrianCount(0);
     event->setAccident(false);
-    event->setMeasuredDensity(0);
     event->setQueueLength(0);
 
     // Traffic Density Sensor
@@ -61,7 +60,6 @@ void TrafficSensors::generateTrafficEvent()
         int vehicles = poisson(meanVehicles);
 
         event->setVehicleCount(vehicles);
-        event->setMeasuredDensity(vehicles);
     }
     // Incident Detection Sensor
     else if (sensorType == 1) {
@@ -85,11 +83,11 @@ void TrafficSensors::generateTrafficEvent()
         event->setVehicleCount(q);
     }
 
-    emit(generatedSignal, 1); //emits one generated event
-
-    if (failed) //generates a failure signal if sensor failed
+    if (failed) { //generates a failure signal if sensor failed
         emit(failureSignal, 1);
-
+        return;
+    }
+    emit(generatedSignal, 1); //emits one generated event
     send(event, "out");
 }
 
